@@ -5,118 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Undangan Pernikahan</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0f0f0f;
-    color: #fff;
-    text-align: center;
-}
-.container {
-    padding: 30px;
+    margin:0;
+    font-family:Poppins;
+    background:#0f0f0f;
+    color:white;
+    text-align:center;
 }
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
+    font-family: 'Playfair Display';
     color: gold;
 }
 .section {
-    margin: 40px 0;
-}
-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
+    padding:40px 20px;
 }
 .button {
-    display: inline-block;
-    padding: 12px 20px;
-    margin-top: 10px;
-    background: gold;
-    color: black;
-    text-decoration: none;
-    border-radius: 5px;
-}
-input, textarea {
-    width: 90%;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: none;
+    background:gold;
+    color:black;
+    padding:10px 20px;
+    text-decoration:none;
+    border-radius:5px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+</audio>
 
-    <!-- COVER -->
-    <div class="section">
-        <h1>Andi & Siti</h1>
-        <p>12 Desember 2026</p>
-    </div>
-
-    <!-- FOTO -->
-    <div class="section">
-        <img src="https://via.placeholder.com/400" alt="foto">
-    </div>
-
-    <!-- DETAIL -->
-    <div class="section">
-        <h2>Detail Acara</h2>
-        <p>Akad: 08:00 WIB</p>
-        <p>Resepsi: 10:00 WIB</p>
-        <p>Gedung Serbaguna Bahagia</p>
-    </div>
-
-    <!-- MAPS -->
-    <div class="section">
-        <h2>Lokasi</h2>
-        <a class="button" href="https://maps.google.com" target="_blank">Lihat Maps</a>
-    </div>
-
-    <!-- LOVE STORY -->
-    <div class="section">
-        <h2>Love Story</h2>
-        <p>Kami bertemu pada tahun 2020 dan memulai perjalanan cinta kami...</p>
-    </div>
-
-    <!-- GALLERY -->
-    <div class="section">
-        <h2>Gallery</h2>
-        <img src="https://via.placeholder.com/400">
-        <img src="https://via.placeholder.com/400">
-    </div>
-
-    <!-- VIDEO -->
-    <div class="section">
-        <h2>Video</h2>
-        <iframe width="100%" height="200"
-        src="https://www.youtube.com/embed/VIDEO_ID"
-        frameborder="0" allowfullscreen></iframe>
-    </div>
-
-    <!-- AMplop Digital -->
-    <div class="section">
-        <h2>Amplop Digital</h2>
-        <p>BCA: 123456789 a.n Andi</p>
-    </div>
-
-    <!-- RSVP -->
-    <div class="section">
-        <h2>Konfirmasi Kehadiran</h2>
-        <form>
-            <input type="text" placeholder="Nama"><br>
-            <textarea placeholder="Ucapan"></textarea><br>
-            <button class="button">Kirim</button>
-        </form>
-    </div>
-
+<!-- COVER -->
+<div class="section" data-aos="fade-up">
+<h1>Andi & Siti</h1>
+<p id="countdown"></p>
 </div>
+
+<!-- FOTO -->
+<div class="section" data-aos="zoom-in">
+<img src="https://via.placeholder.com/300" width="300">
+</div>
+
+<!-- DETAIL -->
+<div class="section" data-aos="fade-up">
+<h2>Detail Acara</h2>
+<p>Akad: 08:00 WIB</p>
+<p>Resepsi: 10:00 WIB</p>
+</div>
+
+<!-- MAP -->
+<div class="section" data-aos="fade-up">
+<a class="button" href="https://maps.google.com">Lihat Lokasi</a>
+</div>
+
+<!-- AMplop -->
+<div class="section" data-aos="fade-up">
+<h2>Amplop Digital</h2>
+<p>BCA: 123456789 a.n Andi</p>
+</div>
+
+<!-- RSVP WA -->
+<div class="section" data-aos="fade-up">
+<h2>Konfirmasi</h2>
+<a class="button" href="https://wa.me/6281234567890?text=Saya%20akan%20hadir">Kirim WA</a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init();
+
+// COUNTDOWN
+var target = new Date("Dec 12, 2026 08:00:00").getTime();
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var d = target - now;
+    var days = Math.floor(d / (1000*60*60*24));
+    document.getElementById("countdown").innerHTML = days + " Hari Lagi";
+}, 1000);
+</script>
 
 </body>
 </html>
